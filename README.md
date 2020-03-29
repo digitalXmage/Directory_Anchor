@@ -1,6 +1,6 @@
 # About
 
-Anchor allows to anchor a directory as a custom alias. This is useful when you are working on a project in an existig directory
+Anchor allows to anchor a directory as a custom alias. This is useful when you are working on a project in an existing directory
 and have the tendancy to open many terminals and multitask in the same directory. This allows to quickly and conviently cd into that anchored directory everytime you open a new terminal without the need to specify the fullpath everytime. Or it is also useful when you are coming back to the project you are working on.
 
 
