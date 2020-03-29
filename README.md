@@ -12,7 +12,7 @@ ahd have the tendancy to open many terminals and multitask in the same directory
 This script compiles the program and moves the executable into your /usr/bin. This allows you to call the program
 from any directory.
 
-#Reinstallation Instructions
+# Re-installation Instructions
 
 If you wish to edit/extend the program in anyway, be it changing an option in the config or extending
 the source code of the program. Follow these steps when you are ready to re-install the program:
@@ -24,7 +24,7 @@ the source code of the program. Follow these steps when you are ready to re-inst
 
 
 
-#Instruction Usage
+# Instruction Usage
 
 	1. anchor p	- this prints the current anchored directory to stdout.
 	2. anchor a x   - the a flag means to anchor directory x, where x is provided by the user.
