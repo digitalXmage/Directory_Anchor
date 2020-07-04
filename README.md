@@ -41,3 +41,7 @@ The default alias key is 'd' which takes you to the anchored directory. However 
 /config/config.h you can change the key. *AGAIN* if you edit the config.h or the src/anchor.c in anyway which requires
 re-installation, PLEASE follow the instructions in *reinstallation instructions* section prior.
 
+
+# Improvements
+
+1. Allow user to create multiple anchors instead of just the one.
