@@ -111,7 +111,7 @@ void remove_anchor_alias(char *alias)
 		exit(EXIT_FAILURE);
 	}
 	/*construct the temp location and open file, for where we will temporary store the contents of .bashrc*/
-	char temp_location[100]="\0"; construct_directory(temp_location,"temp");
+	char temp_location[100]="\0"; construct_directory(temp_location,".temp");
 	FILE *fd2 = fopen(temp_location,"a+");
 	if(fd2==NULL)
 	{
