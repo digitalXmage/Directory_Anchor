@@ -44,4 +44,4 @@ re-installation, PLEASE follow the instructions in *reinstallation instructions*
 
 # Improvements
 
-1. Allow user to create multiple anchors instead of just the one.
+1. Allow user to create multiple anchors instead of just the one. (Maximmum 2 anchor points allowed)
