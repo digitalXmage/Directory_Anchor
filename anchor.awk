@@ -25,10 +25,18 @@ function init_bindings()
 			
 #		}
 #	}
+
+	#backup the .bashrc file as well
 		for(i=1;i<=5;i++)
 		{
 			printf("alias %d=\"\"\n",i)
 		}
+		#print $0
+		#print "hello friend"
+		#could check a built in variable to see if we're at the end and then
+		#print the blank aliases into the file, thus adding them into the script
+		#that way
+
 #	}
 }
 
@@ -43,8 +51,9 @@ function list_bindings()
 	}
 }
 
-function add_binding(number,replacement,toggle)
+function add_binding(number,replacement)
 {
+
 	if($1=="alias" && $2~number){
 
 		#next
@@ -52,21 +61,10 @@ function add_binding(number,replacement,toggle)
 		#printf("alias %d=\"%s\"\n",3,"TESTING")
 	 # $0 = "REPLACEMENT for alias 2"
 
-	} #else create the alias and print that string with rest of file
-	#if this executes, need a toggle to only run once, and not continuously
-	#throughout the iterative reading of the file.
+	} 
 	else{
-			
-
-		if(toggle=="0"){
-			#print $0
-			printf("alias %d=\"%s\"\n",number,replacement)
-			toggle=1	#see if this is allowed
-		}
-		#print $0
+		print $0
 	}
-	print $0
-	#and append to eof
 
 	#doesn't seem ot be working here.
 		
@@ -78,9 +76,10 @@ function add_binding(number,replacement,toggle)
 #the alias number has to already exist in the text. THUS logically
 #if we don't find the alias, then we need to create it or create
 #them pre-emptively, maybe have a setup function, which runs first,
-#which also backs up the .bashrc etc.
+#which also backs up the .bashrc etc. For sake of simplicity
+#let's just create an init function to run first before using the program
 
-BEGIN{ZARGV[1]=ARGV[1];ARGV[1]="/home/sam/.bashrc";ZARGV[2]="0";}\
+BEGIN{ZARGV[1]=ARGV[1];ARGV[1]="/home/sam/.bashrc";}\
 {
 	if(ZARGV[1]=="l"){
 		list_bindings()
@@ -89,12 +88,15 @@ BEGIN{ZARGV[1]=ARGV[1];ARGV[1]="/home/sam/.bashrc";ZARGV[2]="0";}\
 
 	if(ZARGV[1]=="a")
 	{
-#		print $0
-		add_binding(2,"HELLO",ZARGV[2])
+#		print $0 maybe add the toggle logic out here, if it's leaving
+		#and continuing reading perhaps?
+		add_binding(2,"HELLO")
 	}
 
 	if(ZARGV[1]=="i")
 	{
+		#waits to end to then add the new bindings to the bashrc file
+		#init_bindings()
 		print $0
 	}
 }
