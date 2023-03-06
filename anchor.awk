@@ -3,29 +3,6 @@
 function init_bindings()
 {
 
-#when initing the script, we need to make sure to remove the prior anchor numbers
-#or at least update them if they exist, however this runs to prepare the file
-#in order for the program to work correctly.
-
-#so if we come accross any of the alias numbers, then change them to blank,otherwise
-#just print a new string
-
-#	print $0
-#	counter++
-#	print eof
-#	if(counter=eof){
-
-#	if($1=="alias")
-#	{
-#		
-#		if($2~"1"||$2~"2"||$2~"3"||$2~"4"||$2~"5")
-#		{
-#			print $0 #woud this print a blank as opposed to the current alias, or would
-				   #it print this and the alias....
-			
-#		}
-#	}
-
 	#backup the .bashrc file as well
 		for(i=1;i<=5;i++)
 		{
@@ -70,14 +47,9 @@ function add_binding(number,replacement)
 		
 }
 
-#list and add_binding seem to work as expeced Just need to store
-#them in a temp file and copy accross at some point. OR find a 
-#way to edit in place. However I think for add binding to exist
-#the alias number has to already exist in the text. THUS logically
-#if we don't find the alias, then we need to create it or create
-#them pre-emptively, maybe have a setup function, which runs first,
-#which also backs up the .bashrc etc. For sake of simplicity
-#let's just create an init function to run first before using the program
+
+#could redirect it into a temp file, and then at the end, read that file back
+#into the .bashrc see if that's possible to do within itself,
 
 BEGIN{ZARGV[1]=ARGV[1];ARGV[1]="/home/sam/.bashrc";}\
 {
